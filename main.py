@@ -1,6 +1,5 @@
 import requests
 from dotenv import load_dotenv
-load_dotenv()
 import os
 import argparse
 
@@ -37,7 +36,6 @@ def main():
     args = parser.parse_args()
     link = args.link
 
-    #link = input('Введите ссылку: ')
     token = os.getenv('TOKEN_BIT_LY')
     
     if link.startswith('http://bit.ly'):
@@ -55,4 +53,5 @@ def main():
         print('Введена не верная ссылка')
 
 if __name__ == '__main__':
+    load_dotenv()
     main()
